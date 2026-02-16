@@ -4,8 +4,10 @@ import { Label } from "@/components/ui/label";
 import type { FormProps } from "@/types/form";
 
 const BasicInfoForm = ({ form }: FormProps) => {
-  const { formData, setFormData, errors, isStepOneValid, nextStep, step } =
+  const { formData, setFormData, errors, isStepOneValid, nextStep } =
     form;
+
+  console.log(errors);
 
   return (
     <div className="space-y-6">
@@ -27,7 +29,7 @@ const BasicInfoForm = ({ form }: FormProps) => {
             setFormData((prev) => ({ ...prev, email: e.target.value }))
           }
         />
-        {errors.email && <p className="text-sm text-red-500">{errors.name}</p>}
+        {errors.email && <p className="text-sm text-red-500">{errors.email}</p>}
       </div>
 
       <Button variant={"outline"} disabled={!isStepOneValid} onClick={nextStep}>
