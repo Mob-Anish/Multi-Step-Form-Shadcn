@@ -25,7 +25,11 @@ const useMultiStepForm = () => {
   const errors = {
     name: !isNameValid ? "Name is required" : "",
     email:
-      formData.email.length === 0 || !isValidEmail ? "Enter a valid email" : "",
+      formData.email.length === 0
+        ? "Email is required"
+        : !isValidEmail
+          ? "Enter valid email"
+          : "",
   };
 
   const isStepOneValid = isNameValid && isValidEmail;
