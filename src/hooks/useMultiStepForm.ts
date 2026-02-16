@@ -54,6 +54,7 @@ const useMultiStepForm = () => {
     formData,
     setFormData,
     errors,
+    isStepOneValid,
     loading,
     submitted,
     nextStep,
